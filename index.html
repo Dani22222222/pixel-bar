@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pixel Bar — Alquiler de PCs y Consolas</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial; background:#0b0b10; color:#e6f0ff}
+    :root{
+      --bg:#07070a;
+      --glass: rgba(255,255,255,0.04);
+      --neon-pink:#ff4ecf;
+      --neon-blue:#00d0ff;
+      --neon-cyan:#1affd5;
+      --accent:#ffd34e;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:56px;height:56px;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(0,210,255,0.14))}
+    .brand h1{font-size:20px;letter-spacing:1px}
+    .nav-links{display:flex;gap:18px}
+    .nav-links a{color:var(--neon-blue);text-decoration:none;padding:8px;border-radius:8px}
+    .nav-links a:hover{filter:brightness(1.2);text-shadow:0 0 10px rgba(0,208,255,0.12)}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:32px 0}
+    .hero-left h2{font-size:36px;margin-bottom:12px;color:var(--neon-cyan);text-shadow:0 0 16px rgba(26,255,217,0.12)}
+    .hero-left p{color:#cfeffd;opacity:0.9;margin-bottom:18px}
+    .cta{display:flex;gap:12px}
+    .btn{background:linear-gradient(90deg,var(--neon-pink),var(--neon-blue));border:none;color:#071018;padding:12px 18px;border-radius:12px;font-weight:700;cursor:pointer;box-shadow:0 6px 28px rgba(0,0,0,0.6)}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--neon-blue)}
+    .hero-right{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+    .card{background:var(--glass);padding:14px;border-radius:12px}
+    .logo-preview{display:flex;justify-content:center;margin-bottom:12px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+    .service{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);min-height:120px}
+    .service h3{color:var(--neon-pink);margin-bottom:8px}
+    .reservas{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
+    form{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    label{display:block;font-size:13px;margin-bottom:6px;color:#dff9f5}
+    input,select,textarea{width:100%;padding:10px;border-radius:8px;background:#071018;border:1px solid rgba(255,255,255,0.04);color:#dbeef7;margin-bottom:12px}
+    input:focus,select:focus,textarea:focus{outline:none;box-shadow:0 0 18px rgba(0,208,255,0.06)}
+    .note{font-size:13px;color:#9fcadf}
+    .location{margin-top:18px;display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .map{background:#08101a;border-radius:10px;min-height:220px;display:flex;align-items:center;justify-content:center;color:#294a57}
+    footer{margin:28px 0;text-align:center;color:#9fbfd0;font-size:13px}
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .reservas{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .location{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <img src="logo.png" alt="Pixel Bar logo" />
+        <div>
+          <h1>Pixel Bar</h1>
+          <div style="font-size:12px;color:#88dbe8">Calle Santuario, Valladolid 6A</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Tu espacio arcade en Valladolid</h2>
+        <p>Pixel Bar es tu espacio gamer en Valladolid. Alquila ordenadores y consolas de última generación para jugar con tus amigos o competir en torneos.</p>
+        <div class="cta">
+          <button class="btn" id="open-reserva">Reserva tu puesto</button>
+          <button class="btn ghost" onclick="window.scrollTo({top:document.getElementById('servicios').offsetTop,behavior:'smooth'})">Ver servicios</button>
+        </div>
+      </div>
+      <aside class="hero-right card">
+        <div class="logo-preview"><img src="logo.png" alt="logo" style="width:160px;height:160px;object-fit:contain;filter:drop-shadow(0 8px 28px rgba(255,78,207,0.12))"></div>
+        <div style="display:flex;gap:10px;justify-content:space-between">
+          <div><strong style="color:var(--neon-cyan)">Horario</strong><div class="note">Lun-Dom: 12:00 — 02:00</div></div>
+          <div><strong style="color:var(--neon-pink)">Capacidad</strong><div class="note">20 puestos (PC) + 8 consolas</div></div>
+        </div>
+      </aside>
+    </section>
+  </div>
+  <script>
+    document.getElementById('open-reserva').addEventListener('click',function(){
+      document.getElementById('reservas').scrollIntoView({behavior:'smooth'});
+    });
+  </script>
+</body>
+</html>
